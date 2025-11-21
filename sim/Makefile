@@ -3,13 +3,13 @@ VLOGAN_OPTS += -sverilog
 VLOGAN_OPTS += -debug_all
 VLOGAN_OPTS += -full64
 VLOGAN_OPTS += +verilog2001ext+.vp
-VLOGAN_OPTS += -timescale=1ns/1ps
+VLOGAN_OPTS += -timescale=1ns/1ns
 VLOGAN_OPTS += -l comp.log
 VLOGAN_OPTS += -f flist.f
 
 VCS_OPTS += -full64
 VCS_OPTS += -debug_pp 
-VCS_OPTS += -timescale=1ns/1ps 
+VCS_OPTS += -timescale=1ns/1ns 
 VCS_OPTS += -licqueue 
 VCS_OPTS += ../uvm-1.1a/src/dpi/uvm_dpi.cc -CFLAGS -DVCS
 VCS_OPTS += -LDFLAGS -Wl,--no-as-needed
