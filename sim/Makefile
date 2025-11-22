@@ -33,7 +33,7 @@ elaborate:
 		
 
 simulate:
-	./simv +UVM_TESTNAME=my_test -l simulate.log 
+	./simv +UVM_TESTNAME=my_test_type_da3 -l simulate.log 
 
 clean:
 	rm -rf *.daidir
