@@ -21,9 +21,10 @@ class my_test extends uvm_test;
         //参数2：被配置的变量的相对路径
         //参数3：目标变量的标识符
         //参数4：变量的类型
-        uvm_config_db#(uvm_object_wrapper)::set(
-                            this,"*.m_seqr.run_phase",
-                            "default_sequence",my_sequence::get_type());
+        //不再用配置的方式配置sequence
+        //uvm_config_db#(uvm_object_wrapper)::set(
+        //                    this,"*.m_seqr.run_phase",
+        //                    "default_sequence",my_sequence::get_type());
 
         //使用set()为控制变量item_num指定具体的值
         uvm_config_db#(int)::set(this,"*.m_seqr","item_num",20);
@@ -50,5 +51,13 @@ class my_test extends uvm_test;
         //调用框架内部函数，打印本平台的结构
         uvm_top.print_topology(uvm_default_table_printer);
     endfunction
+
+    virtual task run_phase(uvm_phase phase);
+        my_sequence m_seq;
+        m_seq = my_sequence::type_id::create("m_seq");
+        phase.raise_objection(this);
+        m_seq.start(m_env.m_agent.m_seqr);
+        phase.drop_objection(this);
+    endtask
 
 endclass
