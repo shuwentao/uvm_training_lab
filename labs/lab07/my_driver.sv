@@ -97,6 +97,11 @@ class my_driver extends uvm_driver #(my_transaction);
             end
             m_vif.driver_cb.valid_n[req.sa] <= 1'b1 ;
 
+            rsp = my_transaction::type_id::create("rsp");
+            $cast(rsp,req.clone());
+            rsp.set_id_info(req);
+            seq_item_port.put_response(rsp);
+
             //通知sequencer req 处理完毕，相当于给sequencer一个相应
             seq_item_port.item_done();
         end
