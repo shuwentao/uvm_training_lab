@@ -1,7 +1,6 @@
 class my_reference_model extends uvm_component;
 
     `uvm_component_utils(my_reference_model) 
-    my_transaction item ;
     
     //添加imp
     uvm_blocking_get_port #(my_transaction,my_reference_model) i_m2r_port;
@@ -12,6 +11,7 @@ class my_reference_model extends uvm_component;
     endfunction
 
     virtual task run_phase(uvm_phase phase);
+         my_transaction item ;
         `uvm_info("REF_MODEL_RUN","Reference model running !",UVM_MEDIUM)
 
         forever begin
