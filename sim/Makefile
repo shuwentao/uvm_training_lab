@@ -33,7 +33,7 @@ elaborate:
 		
 
 simulate:
-	./simv +UVM_TESTNAME=my_test -l simulate.log 
+	./simv +UVM_TESTNAME=my_test_driver_callback -l simulate.log 
 
 clean:
 	rm -rf *.daidir
