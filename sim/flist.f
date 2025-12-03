@@ -21,8 +21,8 @@
 ../labs/lab11/my_sequence.sv
 ../labs/lab11/my_sequence_lib.sv
 ../labs/lab11/da3_sequence.sv
-//../labs/lab11/sa6_sequence.sv
-//../labs/lab11/sa6_da3_sequence.sv
+../labs/lab11/sa6_sequence.sv
+../labs/lab11/sa6_da3_sequence.sv
 ../labs/lab11/master_agent.sv
 ../labs/lab11/slave_agent.sv
 ../labs/lab11/my_env.sv
